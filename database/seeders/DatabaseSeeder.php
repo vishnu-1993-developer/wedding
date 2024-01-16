@@ -20,8 +20,8 @@ class DatabaseSeeder extends Seeder
         // ]);
         $this->call(CastesTableSeeder::class);
         $this->call(AddressCitiesTableSeeder::class);
-        $this->call(GuestsTableSeeder::class);
         $this->call(ReferencesTableSeeder::class);
         $this->call(RelationTypesTableSeeder::class);
+        $this->call(GuestsTableSeeder::class);
     }
 }

@@ -20,7 +20,6 @@ class ComposerStaticInit9a32fa7e869f079fa0b6f67ea850055b
         '40275907c8566c390185147049ef6e5d' => __DIR__ . '/..' . '/livewire/livewire/src/helpers.php',
         '2c620c99f96a2b964346b45a4d1d1e64' => __DIR__ . '/..' . '/spatie/invade/src/functions.php',
         'e125f489d647ae664b0af7b573079de7' => __DIR__ . '/..' . '/filament/support/src/helpers.php',
-        'b69d5f1f95cd1ed438c038b6cbcc45b5' => __DIR__ . '/..' . '/filament/notifications/src/Testing/Autoload.php',
         '9e4824c5afbdc1482b6025ce3d4dfde8' => __DIR__ . '/..' . '/league/csv/src/functions_include.php',
         '25072dd6e2470089de65ae7bf11d3109' => __DIR__ . '/..' . '/symfony/polyfill-php72/bootstrap.php',
         'f598d06aa772fa33d905e87be6398fb1' => __DIR__ . '/..' . '/symfony/polyfill-intl-idn/bootstrap.php',
@@ -29,6 +28,7 @@ class ComposerStaticInit9a32fa7e869f079fa0b6f67ea850055b
         '9720327d09ed9a4ba00c9b5071b71c7d' => __DIR__ . '/..' . '/danharrin/date-format-converter/src/standards.php',
         '2ad94ea6f6f6013119e9abcf4e302a08' => __DIR__ . '/..' . '/filament/forms/src/helpers.php',
         '3bd81c9b8fcc150b69d8b63b4d2ccf23' => __DIR__ . '/..' . '/spatie/flare-client-php/src/helpers.php',
+        'b69d5f1f95cd1ed438c038b6cbcc45b5' => __DIR__ . '/..' . '/filament/notifications/src/Testing/Autoload.php',
         '35a6ad97d21e794e7e22a17d806652e4' => __DIR__ . '/..' . '/nunomaduro/termwind/src/Functions.php',
         '7b11c4dc42b3b3023073cb14e519683c' => __DIR__ . '/..' . '/ralouphie/getallheaders/src/getallheaders.php',
         '09f6b20656683369174dd6fa83b7e5fb' => __DIR__ . '/..' . '/symfony/polyfill-uuid/bootstrap.php',
@@ -473,8 +473,8 @@ class ComposerStaticInit9a32fa7e869f079fa0b6f67ea850055b
         ),
         'League\\Uri\\' => 
         array (
-            0 => __DIR__ . '/..' . '/league/uri-interfaces',
-            1 => __DIR__ . '/..' . '/league/uri',
+            0 => __DIR__ . '/..' . '/league/uri',
+            1 => __DIR__ . '/..' . '/league/uri-interfaces',
         ),
         'League\\MimeTypeDetection\\' => 
         array (
@@ -719,6 +719,10 @@ class ComposerStaticInit9a32fa7e869f079fa0b6f67ea850055b
         'App\\Filament\\Resources\\ShaadiExpenseResource\\Pages\\CreateShaadiExpense' => __DIR__ . '/../..' . '/app/Filament/Resources/ShaadiExpenseResource/Pages/CreateShaadiExpense.php',
         'App\\Filament\\Resources\\ShaadiExpenseResource\\Pages\\EditShaadiExpense' => __DIR__ . '/../..' . '/app/Filament/Resources/ShaadiExpenseResource/Pages/EditShaadiExpense.php',
         'App\\Filament\\Resources\\ShaadiExpenseResource\\Pages\\ListShaadiExpenses' => __DIR__ . '/../..' . '/app/Filament/Resources/ShaadiExpenseResource/Pages/ListShaadiExpenses.php',
+        'App\\Filament\\Resources\\TodoTaskResource' => __DIR__ . '/../..' . '/app/Filament/Resources/TodoTaskResource.php',
+        'App\\Filament\\Resources\\TodoTaskResource\\Pages\\CreateTodoTask' => __DIR__ . '/../..' . '/app/Filament/Resources/TodoTaskResource/Pages/CreateTodoTask.php',
+        'App\\Filament\\Resources\\TodoTaskResource\\Pages\\EditTodoTask' => __DIR__ . '/../..' . '/app/Filament/Resources/TodoTaskResource/Pages/EditTodoTask.php',
+        'App\\Filament\\Resources\\TodoTaskResource\\Pages\\ListTodoTasks' => __DIR__ . '/../..' . '/app/Filament/Resources/TodoTaskResource/Pages/ListTodoTasks.php',
         'App\\Filament\\Widgets\\Expenses' => __DIR__ . '/../..' . '/app/Filament/Widgets/Expenses.php',
         'App\\Filament\\Widgets\\GuestBarati' => __DIR__ . '/../..' . '/app/Filament/Widgets/GuestBarati.php',
         'App\\Filament\\Widgets\\Jewellary' => __DIR__ . '/../..' . '/app/Filament/Widgets/Jewellary.php',
@@ -742,6 +746,7 @@ class ComposerStaticInit9a32fa7e869f079fa0b6f67ea850055b
         'App\\Models\\Reference' => __DIR__ . '/../..' . '/app/Models/Reference.php',
         'App\\Models\\RelationType' => __DIR__ . '/../..' . '/app/Models/RelationType.php',
         'App\\Models\\ShaadiExpense' => __DIR__ . '/../..' . '/app/Models/ShaadiExpense.php',
+        'App\\Models\\TodoTask' => __DIR__ . '/../..' . '/app/Models/TodoTask.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
