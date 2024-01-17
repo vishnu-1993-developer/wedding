@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('apparel_types', function (Blueprint $table) {
             $table->id();
+            $table->string("name");
+            $table->enum("age_group",["Infant","Toddler","Child","Teen","Adult","Middle age adult","Senior adult"]);
+            $table->integer("min_budget");
+            $table->integer("max_budget");
+            $table->enum("gender",["male","female"]);
             $table->timestamps();
         });
     }

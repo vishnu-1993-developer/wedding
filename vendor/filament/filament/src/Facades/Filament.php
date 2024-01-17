@@ -24,6 +24,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Facade;
 
 /**
+ * @method static bool arePasswordsRevealable()
  * @method static StatefulGuard auth()
  * @method static void bootCurrentPanel()
  * @method static array<NavigationGroup> buildNavigation()
@@ -32,6 +33,7 @@ use Illuminate\Support\Facades\Facade;
  * @method static string | Htmlable getBrandName()
  * @method static string | Htmlable | null getBrandLogo()
  * @method static string | null getBrandLogoHeight()
+ * @method static array getClusteredComponents(?string $cluster = null)
  * @method static string getCollapsedSidebarWidth()
  * @method static Panel | null getCurrentPanel()
  * @method static string | Htmlable | null getDarkModeBrandLogo()
@@ -106,6 +108,7 @@ use Illuminate\Support\Facades\Facade;
  * @method static bool hasTenantProfile()
  * @method static bool hasTenantRegistration()
  * @method static bool hasTopNavigation()
+ * @method static bool hasUnsavedChangesAlerts()
  * @method static bool isServing()
  * @method static bool isSidebarCollapsibleOnDesktop()
  * @method static bool isSidebarFullyCollapsibleOnDesktop()
@@ -113,7 +116,7 @@ use Illuminate\Support\Facades\Facade;
  * @method static void serving(Closure $callback)
  * @method static void setCurrentPanel(Panel | null $panel = null)
  * @method static void setServingStatus(bool $condition = true)
- * @method static void setTenant(Model | null $tenant = null)
+ * @method static void setTenant(Model | null $tenant = null, bool $isQuiet = false)
  *
  * @see FilamentManager
  */

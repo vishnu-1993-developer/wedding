@@ -13,6 +13,7 @@ use Filament\Infolists\Infolist;
 use Filament\Pages\Concerns\InteractsWithFormActions;
 use Filament\Support\Facades\FilamentIcon;
 use Illuminate\Contracts\Support\Htmlable;
+use Illuminate\Support\Arr;
 
 /**
  * @property Form $form
@@ -65,8 +66,6 @@ class ViewRecord extends Page
 
     protected function authorizeAccess(): void
     {
-        static::authorizeResourceAccess();
-
         abort_unless(static::getResource()::canView($this->getRecord()), 403);
     }
 
@@ -106,7 +105,7 @@ class ViewRecord extends Page
     {
         $this->data = [
             ...$this->data,
-            ...$this->getRecord()->only($attributes),
+            ...Arr::only($this->getRecord()->attributesToArray(), $attributes),
         ];
     }
 

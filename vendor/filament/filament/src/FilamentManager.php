@@ -189,6 +189,11 @@ class FilamentManager
         return $this->getCurrentPanel()->getHomeUrl() ?? $this->getCurrentPanel()->getUrl();
     }
 
+    public function getId(): ?string
+    {
+        return $this->getCurrentPanel()?->getId();
+    }
+
     /**
      * @param  array<mixed>  $parameters
      */
@@ -246,6 +251,14 @@ class FilamentManager
     public function getNavigationItems(): array
     {
         return $this->getCurrentPanel()->getNavigationItems();
+    }
+
+    /**
+     * @return array<string | int, array<class-string> | class-string>
+     */
+    public function getClusteredComponents(?string $cluster): array
+    {
+        return $this->getCurrentPanel()->getClusteredComponents($cluster);
     }
 
     /**
@@ -597,6 +610,11 @@ class FilamentManager
         return $this->getCurrentPanel()->hasTopNavigation();
     }
 
+    public function hasUnsavedChangesAlerts(): bool
+    {
+        return $this->getCurrentPanel()->hasUnsavedChangesAlerts();
+    }
+
     public function isGlobalSearchEnabled(): bool
     {
         if ($this->getGlobalSearchProvider() === null) {
@@ -666,11 +684,11 @@ class FilamentManager
         $this->isServing = $condition;
     }
 
-    public function setTenant(?Model $tenant): void
+    public function setTenant(?Model $tenant, bool $isQuiet = false): void
     {
         $this->tenant = $tenant;
 
-        if ($tenant) {
+        if ($tenant && (! $isQuiet)) {
             event(new TenantSet($tenant, $this->auth()->user()));
         }
     }
@@ -826,5 +844,10 @@ class FilamentManager
     public function getDefaultThemeMode(): ThemeMode
     {
         return $this->getCurrentPanel()->getDefaultThemeMode();
+    }
+
+    public function arePasswordsRevealable(): bool
+    {
+        return $this->getCurrentPanel()->arePasswordsRevealable();
     }
 }

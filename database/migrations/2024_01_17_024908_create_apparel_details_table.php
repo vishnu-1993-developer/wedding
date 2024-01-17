@@ -13,6 +13,12 @@ return new class extends Migration
     {
         Schema::create('apparel_details', function (Blueprint $table) {
             $table->id();
+            $table->string("person_name");
+            $table->string("relation")->nullable();
+            $table->string("gurdian")->nullable();
+            $table->foreignId('apparel_types_id')->constrained();
+            $table->boolean("purchased")->default(0);
+            $table->string("description")->nullable();
             $table->timestamps();
         });
     }
