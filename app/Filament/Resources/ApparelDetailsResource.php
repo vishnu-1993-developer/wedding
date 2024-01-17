@@ -13,6 +13,8 @@ use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\select;
 
 class ApparelDetailsResource extends Resource
 {
@@ -29,7 +31,25 @@ class ApparelDetailsResource extends Resource
                 Forms\Components\Select::make('apparel_types_id')
                     ->required()
                     ->relationship("apparelTypes","name")
-                    ->getOptionLabelFromRecordUsing(fn (ApparelType $apparelType) =>  "{$apparelType->nameWithDetails()}"),
+                    ->getOptionLabelFromRecordUsing(fn (ApparelType $apparelType) =>  "{$apparelType->nameWithDetails()}")
+                    ->createOptionForm([
+                        TextInput::make('name')
+                            ->required()
+                            ->maxLength(255),
+                        TextInput::make('min_budget')
+                            ->required(),
+                        TextInput::make('max_budget')
+                            ->required(),
+                        Select::make('age_group')
+                        ->options(config("enums.ageGroups"))
+                        ->required(),
+                        Select::make("gender")
+                        ->options([
+                            "male"      =>  "Male",
+                            "female"    =>  "Female",
+                        ])
+                        ->required(),
+                    ]),
                 Forms\Components\TextInput::make('person_name')
                     ->required()
                     ->maxLength(255),
@@ -70,7 +90,7 @@ class ApparelDetailsResource extends Resource
                     ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
-                //
+                
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
