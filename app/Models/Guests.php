@@ -15,7 +15,8 @@ class Guests extends Model
     protected $casts = [
         "active"    =>  "boolean",
         "include_in_barati" => "boolean",
-        "number_of_people"  =>  "integer"
+        "number_of_people"  =>  "integer",
+        "card_delivered"    =>  "boolean"
     ];
 
     protected $fillable = [
@@ -26,7 +27,8 @@ class Guests extends Model
         "reference_id",
         "active",
         "include_in_barati",
-        "number_of_people"
+        "number_of_people",
+        "card_delivered"
     ];
 
     public function reference()

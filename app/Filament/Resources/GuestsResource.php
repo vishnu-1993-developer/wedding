@@ -83,6 +83,10 @@ class GuestsResource extends Resource
                 ->label("Include In Barati")
                 ->boolean()
                 ->inline(),
+                Forms\Components\Radio::make('card_delivered')
+                ->label("Card Delievered")
+                ->boolean()
+                ->inline(),
                 Forms\Components\TextInput::make('number_of_people')
                 ->label("Number of people")
                 ->required()
@@ -107,6 +111,7 @@ class GuestsResource extends Resource
                 Tables\Columns\TextColumn::make('reference.name')
                     ->sortable(),
                 Tables\Columns\ToggleColumn::make('include_in_barati')->label("Barati"),
+                Tables\Columns\ToggleColumn::make('card_delivered')->label("Card Delivered"),
                 Tables\Columns\TextColumn::make('number_of_people')->label("Peoples"),
                 Tables\Columns\TextColumn::make('relationType.relation_type')->label("Relation"),
                 Tables\Columns\IconColumn::make('active')
@@ -123,6 +128,8 @@ class GuestsResource extends Resource
             ->filters([
                 Filter::make('include_in_barati')
                 ->query(fn (Builder $query): Builder => $query->where('include_in_barati', true)),
+                Filter::make('card_delivered')
+                ->query(fn (Builder $query): Builder => $query->where('card_delivered', true)),
                 SelectFilter::make('caste_id')->label("Select By Caste")->relationship('caste','name'),
                 SelectFilter::make('reference_id')->label("Select By Reference")->relationship('reference','name'),
                 SelectFilter::make('address_city_id')->label("Select By City")->relationship('addressCity','city_name'),
