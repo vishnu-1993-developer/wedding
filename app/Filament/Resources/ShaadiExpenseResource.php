@@ -50,7 +50,14 @@ class ShaadiExpenseResource extends Resource
                     ->required(),
                 Forms\Components\Select::make("expense_type_id")
                 ->relationship('expenseTypes','expense_type')
-                ->required(),
+                ->required()
+                ->createOptionForm([
+                    Forms\Components\TextInput::make('expense_type')
+                        ->required()
+                        ->maxLength(255),
+                    Forms\Components\Toggle::make('active')
+                        ->required(),
+                ]),
                 Forms\Components\Textarea::make('comment')
                     ->maxLength(65535)
                     ->columnSpanFull(),

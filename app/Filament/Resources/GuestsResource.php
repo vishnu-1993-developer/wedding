@@ -160,4 +160,11 @@ class GuestsResource extends Resource
             'edit' => Pages\EditGuests::route('/{record}/edit'),
         ];
     }
+
+    public static function getWidgets(): array
+    {
+        return [
+            GuestsResource\Widgets\CardDeliveredStatus::class,
+        ];
+    }
 }

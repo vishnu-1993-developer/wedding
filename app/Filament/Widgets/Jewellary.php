@@ -7,7 +7,7 @@ use App\Models\Jewellary as JewellaryModel;
 
 class Jewellary extends ChartWidget
 {
-    protected static ?string $heading = 'Chart';
+    protected static ?string $heading = 'Jewellary Expenses';
 
     protected function getData(): array
     {
