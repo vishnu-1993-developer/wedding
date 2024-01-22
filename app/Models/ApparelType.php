@@ -26,6 +26,13 @@ class ApparelType extends Model
 
     public function nameWithDetails()
     {
-        return $this->name . " for "  . ", " . $this->min_budget . "-" . $this->max_budget;
+        return $this->name . " for " . $this->min_budget . "-" . $this->max_budget;
     }
+
+    // protected function name(): Attribute
+    // {
+    //     return Attribute::make(
+    //         get: fn(string $value) =>   ucfirst($value) ."Tester",
+    //     );
+    // }
 }

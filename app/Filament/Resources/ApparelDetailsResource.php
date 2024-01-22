@@ -15,6 +15,7 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\select;
+use Filament\Tables\Filters\SelectFilter;
 
 class ApparelDetailsResource extends Resource
 {
@@ -90,7 +91,8 @@ class ApparelDetailsResource extends Resource
                     ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
-                
+                SelectFilter::make("apparel_types_id")->label("Select By Range")->relationship("apparelTypes",'name')
+                ->getOptionLabelFromRecordUsing(fn (ApparelType $apparelType) =>  "{$apparelType->nameWithDetails()}")
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
