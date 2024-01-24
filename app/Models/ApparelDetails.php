@@ -16,6 +16,7 @@ class ApparelDetails extends Model
         "gurdian",
         "apparel_types_id",
         "purchased",
+        "quantity",
         "description"
     ];
 

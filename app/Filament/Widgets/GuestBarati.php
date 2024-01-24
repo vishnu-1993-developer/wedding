@@ -7,22 +7,21 @@ use App\Models\Guests;
 
 class GuestBarati extends ChartWidget
 {
-    protected static ?string $heading = 'Guest vs Bratai';
+    protected static ?string $heading = 'Card Delivered';
 
     protected function getData(): array
     {
         $totalGuests = Guests::where('active','=',1)->count();
-        $barati = Guests::where('active','=',1)->where('include_in_barati','=',1)->count();
-        $totalBarati = Guests::where('active','=',1)->where('include_in_barati','=',1)->sum('number_of_people');
+        $barati = Guests::where('active','=',1)->where('card_delivered','=',1)->count();
         return [
             'datasets'  =>  [
                 [
-                    "labels"    =>  "Guesting Coming for Barati",
+                    "labels"    =>  "Cards Delivered",
                     "data"      =>  [$totalGuests,$barati],
                     "backgroundColor"   =>  ['blue','green']
                 ]
             ],
-            "labels"    =>  ["All Guests: ".$totalGuests,"Barati: ".$barati,"Total Barati: ".$totalBarati]
+            "labels"    =>  ["All Guests: ".$totalGuests,"Card Delivered: ".$barati]
         ];
     }
 

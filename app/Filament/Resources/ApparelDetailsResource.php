@@ -58,6 +58,9 @@ class ApparelDetailsResource extends Resource
                     ->maxLength(255),
                 Forms\Components\TextInput::make('gurdian')
                     ->maxLength(255),
+                Forms\Components\TextInput::make('quantity')
+                    ->numeric()
+                    ->required(),    
                 Forms\Components\Toggle::make('purchased')
                     ->required(),
                 Forms\Components\TextInput::make('description')
@@ -92,7 +95,7 @@ class ApparelDetailsResource extends Resource
             ])
             ->filters([
                 SelectFilter::make("apparel_types_id")->label("Select By Range")->relationship("apparelTypes",'name')
-                ->getOptionLabelFromRecordUsing(fn (ApparelType $apparelType) =>  "{$apparelType->nameWithDetails()}")
+                ->getOptionLabelFromRecordUsing(fn (ApparelType $apparelType) =>  "{$apparelType->nameWithDetails()}"),
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
