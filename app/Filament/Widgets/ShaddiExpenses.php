@@ -7,9 +7,9 @@ use App\Models\ShaadiExpense;
 
 class ShaddiExpenses extends ChartWidget
 {
-    protected static ?int $sort = 2;
+    protected static ?int $sort = 3;
 
-    protected static ?string $heading = 'Chart';
+    protected static ?string $heading = 'All Expenses';
 
     protected function getData(): array
     {
@@ -29,6 +29,6 @@ class ShaddiExpenses extends ChartWidget
 
     protected function getType(): string
     {
-        return 'line';
+        return 'bar';
     }
 }
