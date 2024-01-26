@@ -7,6 +7,8 @@ use App\Models\Guests;
 
 class GuestBarati extends ChartWidget
 {
+    protected static ?int $sort = 3;
+
     protected static ?string $heading = 'Card Delivered';
 
     protected function getData(): array

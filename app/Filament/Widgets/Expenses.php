@@ -7,6 +7,8 @@ use App\Models\ShaadiExpense;
 
 class Expenses extends ChartWidget
 {
+    protected static ?int $sort = 4;
+
     protected static ?string $heading = 'Expenses';
 
     protected function getData(): array

@@ -7,6 +7,8 @@ use App\Models\Jewellary as JewellaryModel;
 
 class Jewellary extends ChartWidget
 {
+    protected static ?int $sort = 5;
+
     protected static ?string $heading = 'Jewellary Expenses';
 
     protected function getData(): array

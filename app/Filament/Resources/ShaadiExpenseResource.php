@@ -25,7 +25,7 @@ class ShaadiExpenseResource extends Resource
 
     public static function getNavigationBadge(): ?string
     {
-        return static::getModel()::sum('advance');
+        return static::getModel()::sum('total');
     }
 
     public static function form(Form $form): Form
