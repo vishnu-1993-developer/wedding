@@ -7,9 +7,11 @@ use App\Models\ShaadiExpense;
 
 class ShaddiExpenses extends ChartWidget
 {
-    protected static ?int $sort = 3;
+    protected static ?int $sort = 2;
 
     protected static ?string $heading = 'All Expenses';
+
+    protected int | string | array $columnSpan = "full";
 
     protected function getData(): array
     {
