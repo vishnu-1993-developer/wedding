@@ -16,4 +16,11 @@ class ListShaadiExpenses extends ListRecords
             Actions\CreateAction::make(),
         ];
     }
+
+    protected function getHeaderWidgets(): array
+    {
+        return [
+            ShaadiExpenseResource\Widgets\ExpenseOverview::class,
+        ];
+    }
 }

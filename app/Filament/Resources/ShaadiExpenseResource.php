@@ -122,4 +122,5 @@ class ShaadiExpenseResource extends Resource
             'edit' => Pages\EditShaadiExpense::route('/{record}/edit'),
         ];
     }
+    
 }
