@@ -46,8 +46,12 @@ class ShaadiExpenseResource extends Resource
                     ->maxLength(255),
                 Forms\Components\TextInput::make('contact_no')
                     ->maxLength(255),
-                Forms\Components\Toggle::make('fully_paid')
-                    ->required(),
+                Forms\Components\Select::make("expense_added_by")
+                    ->options([
+                        "Vishnu"    =>  "Vishnu",
+                        "Shailbala" =>  "Shailbala",
+                        "others"    =>  "Others"
+                    ]),
                 Forms\Components\Select::make("expense_type_id")
                 ->relationship('expenseTypes','expense_type')
                 ->required()
@@ -59,8 +63,10 @@ class ShaadiExpenseResource extends Resource
                         ->required(),
                 ]),
                 Forms\Components\Textarea::make('comment')
-                    ->maxLength(65535)
-                    ->columnSpanFull(),
+                    ->maxLength(65535),
+                    // ->columnSpanFull(),
+                Forms\Components\Toggle::make('fully_paid')
+                    ->required(),
             ]);
     }
 
@@ -82,6 +88,8 @@ class ShaadiExpenseResource extends Resource
                 Tables\Columns\TextColumn::make('paid_person')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('contact_no')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('expense_added_by')
                     ->searchable(),
                 Tables\Columns\IconColumn::make('fully_paid')
                     ->boolean(),

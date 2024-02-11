@@ -18,7 +18,8 @@ class ShaadiExpense extends Model
         "paid_person",
         "contact_no",
         "comment",
-        "fully_paid"
+        "fully_paid",
+        "expense_added_by"
     ];
 
     public function expenseTypes()
