@@ -19,7 +19,12 @@ class ShaadiExpense extends Model
         "contact_no",
         "comment",
         "fully_paid",
-        "expense_added_by"
+        "expense_added_by",
+        "invoice"
+    ];
+    
+    protected $casts = [
+        "invoice"   =>  'array'
     ];
 
     public function expenseTypes()

@@ -62,6 +62,9 @@ class ShaadiExpenseResource extends Resource
                     Forms\Components\Toggle::make('active')
                         ->required(),
                 ]),
+                Forms\Components\FileUpload::make('invoice')
+                ->multiple()
+                ->directory('expense_invoices'),
                 Forms\Components\Textarea::make('comment')
                     ->maxLength(65535),
                     // ->columnSpanFull(),
@@ -93,6 +96,7 @@ class ShaadiExpenseResource extends Resource
                     ->searchable(),
                 Tables\Columns\IconColumn::make('fully_paid')
                     ->boolean(),
+                Tables\Columns\ImageColumn::make("invoice"),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
